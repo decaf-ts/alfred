@@ -1,7 +1,7 @@
 {
-  "name": "@decaf-ts/ts-workspace",
-  "version": "3.0.3",
-  "description": "template for ts projects",
+  "name": "@decaf-ts/alfred",
+  "version": "0.0.1",
+  "description": "Library to help manage releases, and project creation using templates",
   "type": "module",
   "exports": {
     "require": "./lib/index.cjs",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decaf-ts/ts-workspace.git"
+    "url": "git+https://github.com/decaf-ts/alfred.git"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -41,6 +41,8 @@
     "dist"
   ],
   "keywords": [
+    "project-generator",
+    "release-manager",
     "plantuml",
     "mermaid",
     "uml",
@@ -54,16 +56,16 @@
     "ci/cd",
     "ci",
     "cd",
-    "template",
+    "template-loader",
     "typescript",
     "ts"
   ],
-  "author": "Tiago Venceslau",
+  "author": "Vitor Nogueira",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/decaf-ts/ts-workspace/issues"
+    "url": "https://github.com/decaf-ts/alfred/issues"
   },
-  "homepage": "https://github.com/decaf-ts/ts-workspace#readme",
+  "homepage": "https://github.com/decaf-ts/alfred#readme",
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "@stylistic/eslint-plugin": "^2.10.1",
