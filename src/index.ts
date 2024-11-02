@@ -1,23 +1,16 @@
 export * from "./utils";
-export * from "./namespace";
+export * from "./constants";
 
 /**
- * @summary Module summary
- * @description Module description
- * @module ts-workspace
- */
-
-/**
- * @summary Namespace summary
- * @description Namespace description
- * @namespace Namespace
- * @memberOf module:ts-workspace
+ * @summary Alfred
+ * @description Contains general functionality used by all modules
+ * @module alfred
  */
 
 /**
  * @summary stores the current package version
- * @description this is how you should document a constant
+ * @description Variable that stores the current package version
  * @const VERSION
- * @memberOf module:ts-workspace
+ * @memberOf module:alfred
  */
 export const VERSION = "##VERSION##";
