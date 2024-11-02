@@ -32,8 +32,8 @@
       "useLongnameInNav": false
     },
     "better-docs": {
-      "name": "ts-template",
-      "title": "TypeScript workspace template",
+      "name": "alfred",
+      "title": "Alfred, the Project Butler",
       "hideGenerator": true,
       "useLongnameInNav": false,
       "navLinks": [
@@ -43,7 +43,7 @@
         },
         {
           "label": "Github Repository",
-          "href": "https://github.com/decaf-ts/ts-workspace#readme"
+          "href": "https://github.com/decaf-ts/alfred#readme"
         },
         {
           "label": "Github Profile",
