@@ -183,6 +183,14 @@ function exportJSDist(isDev = false) {
   };
 }
 
+function setPermissions() {
+  function chmod() {
+    return run.default("chmod +x ./lib/cli/release.cjs")();
+  }
+
+  return series(chmod);
+}
+
 function makeDocs() {
   const copyFiles = (source, destination) => {
     return function copyFiles() {
@@ -222,7 +230,11 @@ function makeDocs() {
 
 export const dev = series(
   parallel(
-    series(exportDefault(true, "commonjs"), exportDefault(true, "es2022")),
+    series(
+      exportDefault(true, "commonjs"),
+      exportDefault(true, "es2022"),
+      setPermissions()
+    ),
     exportESMDist(true),
     exportJSDist(true)
   ),
@@ -231,7 +243,11 @@ export const dev = series(
 
 export const prod = series(
   parallel(
-    series(exportDefault(true, "commonjs"), exportDefault(true, "es2022")),
+    series(
+      exportDefault(true, "commonjs"),
+      exportDefault(true, "es2022"),
+      setPermissions()
+    ),
     exportESMDist(false),
     exportJSDist(false)
   ),
