@@ -1,8 +1,11 @@
 /lib
 /dist
 /docs
-# /workdocs/coverage
-!/workdocs/coverage
+/workdocs/coverage
+!/workdocs/coverage/badge-branches.svg
+!/workdocs/coverage/badge-functions.svg
+!/workdocs/coverage/badge-lines.svg
+!/workdocs/coverage/badge-statements.svg
 /workdocs/drawings/*
 /workdocs/uml/*
 !/workdocs/drawings/*.drawio
