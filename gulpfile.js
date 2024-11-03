@@ -22,8 +22,12 @@ let { name, version } = pkg;
 if (name.includes("/")) name = name.split("/")[1]; // for scoped packages
 const VERSION_STRING = "##VERSION##";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+function countOcurrences(list, item) {
+  return list.reduce((accum, curr) => {
+    if (curr == item) accum.push(item);
+    return accum;
+  }, []);
+}
 
 function patchFiles() {
   const doPatch = (basePath) => {
@@ -61,10 +65,6 @@ function getWebpackConfig(isESM, isDev) {
     },
 
     resolve: {
-      alias: {
-        "@constants": path.resolve(__dirname, "src/constants"),
-        "@utils": path.resolve(__dirname, "src/utils"),
-      },
       extensions: [".ts", ".js"],
       fallback: {
         path: false,
@@ -118,9 +118,14 @@ function exportDefault(isDev, mode) {
         const renamedFile = groups[1] + ".cjs";
         const fileName = groups[1] + ".ts";
 
+        const repeatedNameOcurrences = countOcurrences(
+          this.file.path.split("/"),
+          name
+        );
+
         const filePath = path.join(
           this.file.path.split(name)[0],
-          name,
+          repeatedNameOcurrences.slice().join("/"),
           "src",
           this.file.path
             .split(name)[1]
