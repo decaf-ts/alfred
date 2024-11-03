@@ -1,7 +1,7 @@
 import {
   NOT_EMPTY_STRING_VALIDATION_REGEX,
   VERSION_VALIDATION_REGEX,
-} from "../constants/regex";
+} from "@constants/regex";
 
 /**
  * @summary Validates version provided

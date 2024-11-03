@@ -13,6 +13,7 @@ import replace from "gulp-replace";
 import webpack from "webpack-stream";
 import run from "gulp-run-command";
 import process from "node:process";
+import { fileURLToPath } from "url";
 
 import pkg from "./package.json" assert { type: "json" };
 import fs from "fs";
@@ -20,6 +21,9 @@ let { name, version } = pkg;
 
 if (name.includes("/")) name = name.split("/")[1]; // for scoped packages
 const VERSION_STRING = "##VERSION##";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function patchFiles() {
   const doPatch = (basePath) => {
@@ -57,6 +61,10 @@ function getWebpackConfig(isESM, isDev) {
     },
 
     resolve: {
+      alias: {
+        "@constants": path.resolve(__dirname, "src/constants"),
+        "@utils": path.resolve(__dirname, "src/utils"),
+      },
       extensions: [".ts", ".js"],
       fallback: {
         path: false,

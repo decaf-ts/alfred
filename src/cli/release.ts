@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import { validateMessage, validateVersion } from "../utils/validation";
+import { validateMessage, validateVersion } from "@utils/validation";
 
 const program = new Command();
 
@@ -30,11 +30,13 @@ program
   )
   .action((args) => {
     const { tag, message, dry } = args;
-
+    console.log(tag, message, dry);
     if (dry) return console.log(JSON.stringify({ tag, message, dry }));
 
     if (!validateVersion(tag)) throw new Error("Invalid Version");
     if (!validateMessage(message)) throw new Error("Message Cannot be empty");
+
+    console.log(tag, message, dry);
   });
 
 program.parse(process.argv);
