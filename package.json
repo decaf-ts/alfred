@@ -1,6 +1,6 @@
 {
   "name": "@decaf-ts/alfred",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library to help manage releases, and project creation using templates",
   "type": "module",
   "exports": {
