@@ -13,7 +13,6 @@ import replace from "gulp-replace";
 import webpack from "webpack-stream";
 import run from "gulp-run-command";
 import process from "node:process";
-import { fileURLToPath } from "url";
 
 import pkg from "./package.json" assert { type: "json" };
 import fs from "fs";
