@@ -70,6 +70,7 @@
   },
   "homepage": "https://github.com/decaf-ts/alfred#readme",
   "devDependencies": {
+    "@decaf-ts/alfred": "latest",
     "@eslint/js": "^9.14.0",
     "@stylistic/eslint-plugin": "^2.10.1",
     "@types/jest": "^29.5.14",
