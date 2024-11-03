@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from "commander";
 import { validateMessage, validateVersion } from "../utils/validation";
 
@@ -18,10 +20,9 @@ program
   )
   .option(
     "-v, --tag <string>",
-    "Release version number in the format v0.0.1(-alpha(.1)), or you can use patch|minor|major.",
-    ""
+    "Release version number in the format v0.0.1(-alpha(.1)), or you can use patch|minor|major."
   )
-  .option("-m, --message <string>", "Message used for the commit", "")
+  .option("-m, --message <string>", "Message used for the commit")
   .option(
     "-d, --dry",
     "Signals a dry run that validates inputs for testing purposes",
