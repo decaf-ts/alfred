@@ -1,7 +1,8 @@
 /lib
 /dist
 /docs
-/workdocs/coverage
+# /workdocs/coverage
+!/workdocs/coverage
 /workdocs/drawings/*
 /workdocs/uml/*
 !/workdocs/drawings/*.drawio
