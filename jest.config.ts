@@ -1,13 +1,13 @@
 module.exports = {
   verbose: true,
-  transform: { "^.+\\.ts?$": "ts-jest", },
+  transform: { "^.+\\.ts?$": "ts-jest" },
   testEnvironment: "node",
   testRegex: "/tests/.*\\.(test|spec)\\.(ts|tsx)$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node",],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   collectCoverage: true,
   coverageDirectory: "./workdocs/coverage",
-  collectCoverageFrom: ["src/**/*.{ts,jsx}",],
-  coveragePathIgnorePatterns: ["src/cli.ts",],
+  collectCoverageFrom: ["src/**/*.{ts,jsx}"],
+  coveragePathIgnorePatterns: ["/node_modules/", "src/cli"],
   coverageThreshold: {
     global: {
       branches: 70,
@@ -16,7 +16,7 @@ module.exports = {
       statements: 90,
     },
   },
-  coverageReporters: ["json-summary", "text-summary", "text", "html",],
+  coverageReporters: ["json-summary", "text-summary", "text", "html"],
   reporters: [
     "default",
     [
