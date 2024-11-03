@@ -1,10 +1,3 @@
-import { pathsToModuleNameMapper } from "ts-jest";
-
-const paths = {
-  "@utils/*": ["src/utils/*"],
-  "@constants/*": ["src/constants/*"],
-};
-
 module.exports = {
   verbose: true,
   transform: { "^.+\\.ts?$": "ts-jest" },
@@ -13,9 +6,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   collectCoverage: true,
   coverageDirectory: "./workdocs/coverage",
-  moduleNameMapper: pathsToModuleNameMapper(paths, {
-    prefix: "<rootDir>/",
-  }),
+
   collectCoverageFrom: ["src/**/*.{ts,jsx}"],
   coveragePathIgnorePatterns: ["/node_modules/", "src/cli"],
   coverageThreshold: {

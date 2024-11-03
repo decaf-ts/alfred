@@ -1,4 +1,4 @@
-import { validateMessage, validateVersion } from "@utils/validation";
+import { validateMessage, validateVersion } from "../../src";
 
 describe("Version Validation", () => {
   describe("Using direct file import", () => {

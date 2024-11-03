@@ -2,8 +2,9 @@ import {
   SEMANTIC_VERSIONING,
   VERSION_VALIDATION_REGEX,
   NOT_EMPTY_STRING_VALIDATION_REGEX,
-} from "../../src/constants";
-import { VERSION } from "../../src";
+  VERSION,
+} from "../../src";
+
 describe("Tests constants values", () => {
   it("Ensures Semantic Versioning values", () => {
     expect(SEMANTIC_VERSIONING.MAJOR).toEqual("major");

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import { validateMessage, validateVersion } from "@utils/validation";
+import { validateMessage, validateVersion } from "../utils/validation";
 
 const program = new Command();
 
