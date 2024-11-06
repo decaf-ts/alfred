@@ -122,15 +122,22 @@ function exportDefault(isDev, mode) {
           name
         );
 
+        const pathend = this.file.path
+          .split(name)
+          [this.file.path.split(name).length - 1].split("/")
+          .slice(
+            1,
+            this.file.path
+              .split(name)
+              [this.file.path.split(name).length - 1].split("/").length - 1
+          )
+          .join("/");
+
         const filePath = path.join(
           this.file.path.split(name)[0],
           repeatedNameOcurrences.slice().join("/"),
           "src",
-          this.file.path
-            .split(name)[1]
-            .split("/")
-            .slice(1, this.file.path.split(name)[1].split("/").length - 1)
-            .join("/"),
+          pathend,
           fileName
         );
 
