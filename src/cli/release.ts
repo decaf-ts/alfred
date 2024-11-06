@@ -34,7 +34,8 @@ program
     if (dry) return console.log(JSON.stringify({ tag, message, dry }));
 
     if (!validateVersion(tag)) throw new Error("Invalid Version");
-    if (!validateMessage(message)) throw new Error("Message Cannot be empty");
+    if (!message || !validateMessage(message))
+      throw new Error("Message Cannot be empty");
 
     console.log(tag, message, dry);
   });
